@@ -37,7 +37,7 @@ def start_bot():
     send_message("🚀 PhD Bot Started Successfully")
 
 # schedule 9 AM daily
-schedule.every().day.at("09:00").do(run_job)
+schedule.every().day.at("03:30").do(run_job)
 
 start_bot()
 
