@@ -6,7 +6,15 @@ KEYWORDS = [
     "research admission",
     "phd admission",
     "fellowship",
-    "doctor of philosophy"
+    "doctor of philosophy", 
+    "2026", 
+    "PhD Admission", 
+    "doctral programme", 
+    "2026-2027",
+    "UGC–JRF",
+    "PhD Admissions 2025-26",
+    "Ph.D. July, 2026 Session",
+    "Ph.D Admission Notification"
 ]
 
 def check_updates(url):
