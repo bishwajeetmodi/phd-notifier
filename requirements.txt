@@ -2,3 +2,6 @@ requests
 beautifulsoup4
 schedule
 python-telegram-bot
+python-dotenv
+pdfminer.six
+hashlib
