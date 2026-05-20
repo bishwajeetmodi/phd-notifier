@@ -31,11 +31,36 @@ def get_page_links(url):
 
 def read_pdf(url):
     try:
-        r = requests.get(url, timeout=10)
-        with open("temp.pdf", "wb") as f:
+        import requests
+        import os
+        from pdfminer.high_level import extract_text
+
+        r = requests.get(url, timeout=15)
+
+        if r.status_code != 200:
+            return ""
+
+        filename = "temp.pdf"
+
+        with open(filename, "wb") as f:
             f.write(r.content)
 
-        text = extract_text("temp.pdf")
-        return text
-    except:
+        try:
+            text = extract_text(filename)
+
+            if text:
+                return text.lower()
+
+            return ""
+
+        except Exception as pdf_error:
+            print(f"PDF Parse Error: {pdf_error}")
+            return ""
+
+        finally:
+            if os.path.exists(filename):
+                os.remove(filename)
+
+    except Exception as e:
+        print(f"PDF Download Error: {e}")
         return ""
